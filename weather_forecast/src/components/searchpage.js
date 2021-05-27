@@ -4,7 +4,6 @@ import LocationCard from "./locationcard";
 
 const SearchPage = (props) => {
   const [input, setInput] = useState('');
-  const [consolidatedData, setConsolidatedData] = useState([]);
   const [locationList, setLocationList] = useState([]);
 
   const fetchLocationList = async () => {
@@ -14,6 +13,7 @@ const SearchPage = (props) => {
          setLocationList(data) 
        })
        .catch(error => setLocationList([]));}
+  
 
   const handleSearch = event => {
     if (event.hasOwnProperty('target') && event.target.value) {
@@ -23,15 +23,6 @@ const SearchPage = (props) => {
     }
   };
 
-//   const handleClick = event => {
-//     event.preventDefault();
-//     if (event.hasOwnProperty('target') && event.target.value) {
-//         console.log(event.target.value)
-//         setInput(event.target.value);
-//     } else {
-//         setInput('');
-//     }
-//   };
 
   useEffect( () => {
     fetchLocationList()},[input]);
@@ -49,7 +40,6 @@ const SearchPage = (props) => {
             <LocationCard 
             locationName={data.title}
             locationId = {data.woeid}
-            // handleClick = {handleClick}
             />
     	   )	
     	 }

@@ -13,5 +13,3 @@ function App() {
 
 const mainNode = document.getElementById("root");
 ReactDOM.render(<App />,mainNode);
-
-// export default App;

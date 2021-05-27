@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+
+.modal-body {
+  margin: auto;
+  width: 100%;
+}
+
+.weatherStateName {
+  padding: 0px 0px;
+  background-color: burlywood
+}
+
+.th-header {
+  padding: 0px 10px;
+  background-color: burlywood
+}
+
+.th-weatherStateName {
+  padding: 2px 1px;
+}
+
+.th-rows {
+  padding: 0px 1px;
+}
+
+th, td {
+  border: 1px solid black
+}
+
+table {
+  width:  100%;
+  font-size: 0.9vw;
+}
