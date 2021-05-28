@@ -1,0 +1,84 @@
+.location-card {
+    cursor: pointer
+  }
+  
+.modal-body {
+    margin: auto;
+    width: 100%;
+    }
+
+.weatherStateName {
+    padding: 0px 0px;
+    background-color: rgba(222, 184, 135, 0.582)
+    }
+
+.th-header {
+    padding: 0px 10px;
+    background-color: rgba(222, 184, 135, 0.582)
+    }
+
+.th-weatherStateName {
+    padding: 2px 1px;
+    }
+
+.th-rows {
+    padding: 0px 1px;
+    }
+
+th, td {
+    border: 1px solid black
+    }
+
+table {
+    width:  100%;
+    font-size: 0.9vw;
+    }
+
+.normal {
+    color: black;
+}
+
+.snow {
+    color: black;
+    background-color: rgba(0, 255, 170, 0.144);
+}
+
+.hail {
+    color: white;
+    background-color: rgb(5, 5, 73)
+}
+
+.thunderstorm {
+    color: white;
+    background-color: rgb(110, 104, 14)
+}
+
+.heavy-rain {
+    color: black;
+    background-color: blue;
+}
+
+.light-rain {
+    color: black;
+    background-color: lightblue;
+}
+
+.showers {
+    color: black;
+    background-color: blueviolet;
+}
+
+.heavy-cloud {
+    color: white;
+    background-color: rgba(26, 24, 24, 0.753);
+}
+
+.light-cloud {
+    color: black;
+    background-color: rgba(88, 87, 87, 0.315);
+}
+
+.clear {
+    color: black;
+    background-color: rgb(245, 245, 18);
+}
