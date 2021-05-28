@@ -29,7 +29,7 @@ const SearchPage = (props) => {
 	
   return (
     <>
-      <h1>Location List</h1>
+      <h1>Start typing in searchbar to see results!!</h1>
       <SearchBar 
        searchQuery={input} 
        handleSearch={handleSearch}
@@ -37,12 +37,20 @@ const SearchPage = (props) => {
       { locationList.map((data,index) => {
         if (data) {
           return (
+          <div key={`location-${data.woeid}`}>
             <LocationCard 
+            key={`location-${data.woeid}`}
             locationName={data.title}
             locationId = {data.woeid}
             />
+          </div>
     	   )	
-    	 }
+    	 } else {
+        return (
+          <>
+          </>
+        )
+      }
         }) }
     </>
    );

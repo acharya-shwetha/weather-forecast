@@ -4,11 +4,11 @@ const SearchBar = ({
     searchQuery = '', 
     handleSearch
 }) => {
-  const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
+  
   return (
     <input 
-     style={BarStyling}
-     key="random1"
+      className="search-bar"
+     key="location-search-bar"
      value={searchQuery}
      placeholder={"search location"}
      onChange={handleSearch}

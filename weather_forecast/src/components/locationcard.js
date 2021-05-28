@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from '../modal/modal';
 
 const LocationCard = ({
@@ -40,7 +40,7 @@ const LocationCard = ({
   return (
     <>
         <div>
-              <h1
+              <h1 className="location-card"
               onClick={handleClick}
               >
               {locationName}</h1>
