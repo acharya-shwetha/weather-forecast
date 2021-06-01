@@ -7,10 +7,25 @@ const SearchPage = (props) => {
   const [locationList, setLocationList] = useState([]);
 
   const fetchLocationList = async () => {
-    return await fetch(`https://www.metaweather.com/api/location/search/?query=${input}`)
+  
+    var headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({"query":input});
+
+    var requestOptions = {
+      method: 'POST',
+      headers: headers,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    // return await fetch(`https://www.metaweather.com/api/location/search/?query=${input}`)
+    return await fetch(`http://localhost:8080/api/location/search`, requestOptions)
       .then(response => response.json())
       .then(data => {
-         setLocationList(data) 
+        let {locationLists} = data;
+         setLocationList(locationLists) 
        })
        .catch(error => setLocationList([]));}
   

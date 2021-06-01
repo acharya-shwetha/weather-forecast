@@ -76,31 +76,15 @@ const Modal = ({
 
                             <td className={`th-weatherStateName ${weatherStateClass}`}> { data.weather_state_name ? data.weather_state_name : ""} </td>
 
-                            <td className={`th-rows ${weatherStateClass}`}> { data.weather_state_abbr ? data.weather_state_abbr : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.wind_direction_compass ? data.wind_direction_compass : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.created ? data.created : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.applicable_date ? data.applicable_date : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.min_temp ? data.min_temp : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.max_temp ? data.max_temp : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.the_temp ? data.the_temp : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.wind_speed ? data.wind_speed : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.wind_direction ? data.wind_direction : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.air_pressure ? data.air_pressure : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.humidity ? data.humidity : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.visibility ? data.visibility : "" } </td>
-
-                            <td className={`th-rows ${weatherStateClass}`}> { data.predictability ? data.predictability : "" } </td>
+                            { Object.keys(data).map((key,index) => {
+                              if(key !== "weather_state_name" && key !== "id"){
+                                return (
+                                  <>
+                                    <td className={`th-rows ${weatherStateClass}`}> { data[key] ? data[key] : "" } </td>
+                                  </>
+                                )
+                              }
+                            })}
 
                             </tr>
                         </tbody>

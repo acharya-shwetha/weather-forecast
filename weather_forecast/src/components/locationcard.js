@@ -12,12 +12,25 @@ const LocationCard = ({
   });
 
   const fetchLocationData = async () => {
-    return await fetch(`https://www.metaweather.com/api/location/${locationId}`)
+    var headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({"woeid":locationId});
+
+    var requestOptions = {
+      method: 'POST',
+      headers: headers,
+      body: raw,
+      redirect: 'follow'
+    };
+    // return await fetch(`https://www.metaweather.com/api/location/${locationId}`)
+    return await fetch(`http://localhost:8080/api/location`, requestOptions)
       .then(response => response.json())
       .then(data => {
+        let {locationDatas} = data;
         let locationData = {
           showModalData: true,
-          weatherData: data.consolidated_weather
+          weatherData: locationDatas.consolidated_weather
         }
         setLocationInfo({...locationData}) 
         })
